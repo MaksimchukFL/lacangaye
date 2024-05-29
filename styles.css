@@ -11,30 +11,35 @@ body {
     margin: 0 auto;
 }
 
-
-
-
 header {
     background-color: #000000;
     color: #fff;
     padding: 1em 0;
 }
+
 .header-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap; /* Permite que los elementos se reorganicen en pantallas pequeñas */
 }
+
 .logo {
     height: 200px;
 }
+
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column; /* Alinea los botones verticalmente */
 }
+
 nav ul li {
     margin-bottom: 20%; /* Espacio entre los elementos de navegación */
 }
+
 nav ul li a {
     color: #fff;
     text-decoration: none;
@@ -43,27 +48,25 @@ nav ul li a {
     border: 2px solid transparent; /* Bordes iniciales transparentes */
     transition: border-color 0.3s ease; /* Transición de color de borde */
 }
+
 nav ul li a:hover {
     border-color: #fff; /* Cambia el color del borde a blanco */
 }
-/* Estilos para los botones de redes sociales */
+
 .social-buttons {
     display: flex;
     align-items: center;
     margin-top: 10px; /* Espacio entre la lista de navegación y los botones de redes sociales */
 }
+
 .social-buttons a {
     margin-left: 10px; /* Espacio entre los botones */
 }
+
 .social-buttons img {
     width: 30px; /* Tamaño de los botones */
 }
 
-
-
-
-
-/* Estilos del hero */
 #hero {
     position: relative;
     height: 500px; /* Altura de la sección hero */
@@ -75,21 +78,25 @@ nav ul li a:hover {
     align-items: center;
     flex-direction: column;
 }
+
 #hero .container {
     position: relative;
     z-index: 1;
 }
+
 #hero h2 {
     font-size: 3em; /* Tamaño del texto del título */
     margin: 0.5em 0;
     text-shadow: 2px 2px 4px #000; /* Sombra para el borde negro */
 }
+
 #hero p {
     font-size: 1.5em; /* Tamaño del texto del párrafo */
     margin: 0;
     padding: 0 1em; /* Añade algo de padding para un poco de espacio alrededor del texto */
     text-shadow: 2px 2px 4px #000; /* Sombra para el borde negro */
 }
+
 #hero::before {
     content: "";
     position: absolute;
@@ -102,6 +109,7 @@ nav ul li a:hover {
     z-index: -1;
     animation: backgroundAnimation 20s linear infinite;
 }
+
 @keyframes backgroundAnimation {
     0% {
         background-image: url('assets/heroslideshow1.JPG');
@@ -115,12 +123,11 @@ nav ul li a:hover {
     75% {
         background-image: url('assets/heroslideshow4.jpg');
     }
-    100% {  
+    100% {
         background-image: url('assets/heroslideshow1.JPG');
     }
 }
 
-/* Nuevos estilos para centrar y dar estilo a los títulos de las secciones */
 h2 {
     text-align: center;
     font-size: 2.5em; /* Ajusta el tamaño según tus preferencias */
@@ -142,17 +149,19 @@ h2::after {
     margin-top: 1em; /* Espacio superior para separar del contenido anterior */
 }
 
-
-
-/* Contenedor de la sección Nuestros Servicios */
-/* Estilos para los contenedores de servicios */
-
+.servicio {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se reorganicen en pantallas pequeñas */
+    justify-content: center;
+}
 
 .servicio img {
-    height: 500px;
-    margin: auto;
+    height: 300px;
+    margin: 20px;
     display: block;
 }
+
 #servicios, #trabajos, #contacto {
     padding: 2em 0;
 }
@@ -161,10 +170,6 @@ h2::after {
     margin-bottom: 1.5em;
 }
 
-
-
-
-/* Estilos para la sección de videos */
 #videos {
     padding: 2em 0;
     text-align: center;
@@ -199,7 +204,6 @@ h2::after {
     height: auto;
 }
 
-/* Estilos para la sección de contacto */
 #contacto {
     padding: 2em 0;
     text-align: center;
@@ -263,7 +267,6 @@ h2::after {
     text-decoration: underline;
 }
 
-/* Estilos para el formulario */
 form {
     display: flex;
     flex-direction: column;
@@ -297,13 +300,6 @@ form button:hover {
     background-color: #555;
 }
 
-
-
-
-
-
-
-
 footer {
     background-color: #333;
     color: #fff;
@@ -313,4 +309,87 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    .social-buttons {
+        margin-top: 10px;
+    }
+
+    .social-buttons a {
+        margin-left: 5px;
+    }
+
+    #hero {
+        height: auto;
+        padding: 2em 0;
+    }
+
+    #hero h2 {
+        font-size: 2em;
+    }
+
+    #hero p {
+        font-size: 1.2em;
+    }
+
+    .servicio {
+        flex-direction: column;
+    }
+
+    .servicio img {
+        height: auto;
+        width: 100%;
+        margin: 0;
+    }
+
+    .contacto-contenido {
+        flex-direction: column;
+    }
+
+    .mapa, .informacion-contacto {
+        width: 100%;
+        min-width: unset;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li a {
+        padding: 6px 12px;
+    }
+
+    .social-buttons img {
+        width: 25px;
+    }
+
+    #hero h2 {
+        font-size: 1.5em;
+    }
+
+    #hero p {
+        font-size: 1em;
+    }
+
+    .videos-grid {
+        grid-template-columns: 1fr;
+    }
 }
