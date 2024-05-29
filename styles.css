@@ -393,3 +393,29 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
+/*Parte de este código es redundante, son modificaciones para que el mapa culiao sea responsive, después lo voy a organizar :P*/
+.mapa {
+    width: 100%; /* Asegura que el contenedor del mapa ocupe el 100% del ancho disponible */
+    height: auto; /* Ajusta la altura automáticamente */
+    margin-bottom: 1em; /* Espacio inferior */
+}
+
+.mapa iframe {
+    width: 100%; /* Asegura que el iframe del mapa ocupe el 100% del ancho del contenedor */
+    height: 300px; /* Ajusta la altura del mapa según sea necesario */
+    border: 0; /* Elimina el borde */
+}
+
+@media (max-width: 768px) {
+    .mapa iframe {
+        height: 200px; /* Ajusta la altura del mapa en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .mapa iframe {
+        height: 150px; /* Ajusta la altura del mapa en pantallas muy pequeñas */
+    }
+}
+
